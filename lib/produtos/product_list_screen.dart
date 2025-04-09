@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:prova_mobile_1/auth_service.dart';
 import 'package:prova_mobile_1/models/product_model.dart';
 import 'product_service.dart';
 import 'product_form_screen.dart';
@@ -23,6 +24,14 @@ class _ProductListScreenState extends State<ProductListScreen> {
     });
   }
 
+  void _logout() async {
+    await AuthService.logout(); // Remove o token
+    Navigator.pushReplacementNamed(
+      context,
+      '/login',
+    ); // Redireciona para a tela de login
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -30,13 +39,9 @@ class _ProductListScreenState extends State<ProductListScreen> {
         title: Text('Produtos'),
         actions: [
           IconButton(
-            icon: Icon(Icons.add),
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => ProductFormScreen()),
-              ).then((_) => _refreshProducts());
-            },
+            icon: Icon(Icons.logout),
+            onPressed: _logout, // Chama a função de logout
+            tooltip: 'Sair', // Adiciona uma dica ao botão
           ),
         ],
       ),
@@ -90,6 +95,15 @@ class _ProductListScreenState extends State<ProductListScreen> {
             },
           );
         },
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => ProductFormScreen()),
+          ).then((_) => _refreshProducts());
+        },
+        child: Icon(Icons.add),
       ),
     );
   }
