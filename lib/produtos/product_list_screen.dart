@@ -1,4 +1,3 @@
-// product_list_screen.dart
 import 'package:flutter/material.dart';
 import 'package:prova_mobile_1/models/product_model.dart';
 import 'product_service.dart';

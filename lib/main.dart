@@ -1,4 +1,3 @@
-// main.dart (permanece igual)
 import 'package:flutter/material.dart';
 import 'package:prova_mobile_1/login_screen.dart';
 import 'package:prova_mobile_1/produtos/product_list_screen.dart';

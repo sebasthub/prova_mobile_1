@@ -1,4 +1,3 @@
-// product_model.dart
 class Product {
   final int? id; // Adicionei ID para identificar produtos existentes
   final bool active;
