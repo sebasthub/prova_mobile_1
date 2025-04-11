@@ -1,5 +1,5 @@
 class Product {
-  final int? id; // Adicionei ID para identificar produtos existentes
+  final int? id;
   final bool active;
   final String name;
   final int quantity;

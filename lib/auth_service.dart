@@ -5,7 +5,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 // auth_service.dart
 class AuthService {
   static const String baseUrl =
-      'http://sebasnet.cloud'; // Substitua pela URL da sua API
+      'http://172.16.111.182:8000'; // Substitua pela URL da sua API
 
   static Future<String?> login(String username, String password) async {
     final response = await http.post(

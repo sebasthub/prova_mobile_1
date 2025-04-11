@@ -6,7 +6,7 @@ import 'package:prova_mobile_1/models/product_model.dart';
 
 class ProductService {
   static const String baseUrl =
-      'http://sebasnet.cloud'; // Substitua pela URL da sua API
+      'http://172.16.111.182:8000';
 
   static Future<List<Product>> getProducts() async {
     final token = await AuthService.getToken();

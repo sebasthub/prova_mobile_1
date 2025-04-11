@@ -40,8 +40,8 @@ class _ProductListScreenState extends State<ProductListScreen> {
         actions: [
           IconButton(
             icon: Icon(Icons.logout),
-            onPressed: _logout, // Chama a função de logout
-            tooltip: 'Sair', // Adiciona uma dica ao botão
+            onPressed: _logout,
+            tooltip: 'Sair',
           ),
         ],
       ),
