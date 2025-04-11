@@ -17,7 +17,6 @@ class _ProductFormScreenState extends State<ProductFormScreen> {
   late TextEditingController _nameController;
   late TextEditingController _quantityController;
   late TextEditingController _priceController;
-  late TextEditingController _ncuController;
 
   @override
   void initState() {
@@ -30,7 +29,6 @@ class _ProductFormScreenState extends State<ProductFormScreen> {
     _priceController = TextEditingController(
       text: widget.product?.price.toString() ?? '0',
     );
-    _ncuController = TextEditingController(text: widget.product?.ncu ?? '');
   }
 
   void _submit() async {
@@ -41,7 +39,6 @@ class _ProductFormScreenState extends State<ProductFormScreen> {
         name: _nameController.text,
         quantity: int.parse(_quantityController.text),
         price: double.parse(_priceController.text),
-        ncu: _ncuController.text,
       );
 
       try {
@@ -93,12 +90,6 @@ class _ProductFormScreenState extends State<ProductFormScreen> {
                 controller: _priceController,
                 decoration: InputDecoration(labelText: 'Preço'),
                 keyboardType: TextInputType.numberWithOptions(decimal: true),
-                validator:
-                    (value) => value!.isEmpty ? 'Campo obrigatório' : null,
-              ),
-              TextFormField(
-                controller: _ncuController,
-                decoration: InputDecoration(labelText: 'NCU'),
                 validator:
                     (value) => value!.isEmpty ? 'Campo obrigatório' : null,
               ),
